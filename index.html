@@ -1,12 +1,105 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
-  <meta name="google-site-verification" content="7_au3oNJ1ibO1QipbPeVWyatZI9cPHdxj0-giHXZGo0" />
   <meta charset="UTF-8">
-  <title>Website chính thức</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="7_au3oNJ1ibO1QipbPeVWyatZI9cPHdxj0-giHXZGo0" />
+  <title>Website chính thức - Phuc Nguyen</title>
+  <style>
+    /* Reset cơ bản */
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      width: 100%;
+      max-width: 300px;
+    }
+
+    .btn {
+      display: block;
+      text-decoration: none;
+      padding: 15px;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      color: #fff;
+      text-align: center;
+    }
+
+    .btn-download {
+      background: #ff6b6b;
+    }
+
+    .btn-download:hover {
+      background: #ff8787;
+    }
+
+    .btn-open {
+      background: #1dd1a1;
+    }
+
+    .btn-open:hover {
+      background: #48dbfb;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    @media (max-width: 480px) {
+      h1 { font-size: 2rem; }
+      p { font-size: 1rem; }
+      .btn { padding: 12px; font-size: 1rem; }
+    }
+  </style>
 </head>
 <body>
   <h1>Xin chào!</h1>
   <p>Đây là website chính thức của Phuc Nguyen.</p>
+
+  <div class="button-container">
+    <!-- Nút tải app từ Play Store -->
+    <a class="btn btn-download" href="https://play.google.com/store/apps/details?id=com.aptis.test" target="_blank">
+      Tải App Aptis Trainer
+    </a>
+
+    <!-- Nút mở app (custom scheme) -->
+    <a class="btn btn-open" href="aptistrainer://invite?ref=TEST123">
+      Mở App nếu đã cài
+    </a>
+  </div>
+
+  <footer>
+    &copy; 2025 Phuc Nguyen. Mọi quyền được bảo lưu.
+  </footer>
 </body>
 </html>
+
