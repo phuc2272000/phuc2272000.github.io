@@ -5,9 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-site-verification" content="7_au3oNJ1ibO1QipbPeVWyatZI9cPHdxj0-giHXZGo0" />
   <title>Website chính thức - Phuc Nguyen</title>
+
   <style>
     /* Reset cơ bản */
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
     body {
       display: flex;
@@ -15,7 +21,7 @@
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      background: linear-gradient(to right, #6a11cb, #2575fc);
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
       color: #fff;
       text-align: center;
       padding: 20px;
@@ -24,76 +30,104 @@
     h1 {
       font-size: 2.5rem;
       margin-bottom: 10px;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.35);
     }
 
     p {
-      font-size: 1.2rem;
-      margin-bottom: 30px;
+      font-size: 1.15rem;
+      margin-bottom: 35px;
+      opacity: 0.95;
     }
 
     .button-container {
       display: flex;
       flex-direction: column;
-      gap: 15px;
+      gap: 18px;
       width: 100%;
-      max-width: 300px;
+      max-width: 320px;
     }
 
+    /* Button chung */
     .btn {
       display: block;
       text-decoration: none;
-      padding: 15px;
-      border-radius: 10px;
-      font-size: 1.1rem;
-      font-weight: bold;
-      transition: all 0.3s ease;
+      padding: 16px 20px;
+      border-radius: 16px;
+      font-size: 1.05rem;
+      font-weight: 600;
       color: #fff;
       text-align: center;
+      transition: all 0.25s ease;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
     }
 
-    .btn-download {
-      background: #ff6b6b;
+    .btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 32px rgba(0,0,0,0.35);
     }
 
-    .btn-download:hover {
-      background: #ff8787;
+    /* Android button */
+    .btn-android {
+      background: linear-gradient(135deg, #00c853, #64dd17);
     }
 
-    .btn-open {
-      background: #1dd1a1;
+    .btn-android:hover {
+      background: linear-gradient(135deg, #00e676, #76ff03);
     }
 
-    .btn-open:hover {
-      background: #48dbfb;
+    /* iOS button */
+    .btn-ios {
+      background: linear-gradient(135deg, #5f2c82, #49a09d);
+    }
+
+    .btn-ios:hover {
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
     }
 
     footer {
-      margin-top: 40px;
+      margin-top: 45px;
       font-size: 0.9rem;
-      opacity: 0.8;
+      opacity: 0.85;
     }
 
     @media (max-width: 480px) {
-      h1 { font-size: 2rem; }
-      p { font-size: 1rem; }
-      .btn { padding: 12px; font-size: 1rem; }
+      h1 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      .btn {
+        padding: 14px;
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
+
 <body>
   <h1>Xin chào!</h1>
   <p>Đây là website chính thức của Phuc Nguyen.</p>
 
   <div class="button-container">
-    <!-- Nút tải app từ Play Store -->
-    <a class="btn btn-download" href="https://play.google.com/store/apps/details?id=com.aptis.test" target="_blank">
-      Tải App Aptis Trainer trên Android
+    <!-- Android -->
+    <a
+      class="btn btn-android"
+      href="https://play.google.com/store/apps/details?id=com.aptis.test"
+      target="_blank"
+    >
+      📲 Tải Aptis Trainer trên Android
     </a>
 
-    <!-- Nút mở app (custom scheme) -->
-     <a class="btn btn-download" href="https://apps.apple.com/app/id6756222548" target="_blank">
-      Tải App Aptis Trainer trên Iphone
+    <!-- iOS -->
+    <a
+      class="btn btn-ios"
+      href="https://apps.apple.com/app/id6756222548"
+      target="_blank"
+    >
+      🍎 Tải Aptis Trainer trên iPhone
     </a>
   </div>
 
@@ -102,4 +136,3 @@
   </footer>
 </body>
 </html>
-
