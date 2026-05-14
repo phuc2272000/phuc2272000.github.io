@@ -4,17 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-site-verification" content="7_au3oNJ1ibO1QipbPeVWyatZI9cPHdxj0-giHXZGo0" />
-  <meta name="description" content="Aptis Trainer – Practice APTIS English test on Android, iPhone, and Mac. Listening, Reading, Writing, Speaking.">
+  <meta name="description" content="Aptis Trainer – The all-in-one APTIS English test prep app. Practice Grammar, Vocabulary, Listening, Reading, Writing & Speaking in 9 languages.">
   <title>Aptis Trainer – Official App</title>
-
   <style>
-    *, *::before, *::after {
-      margin: 0; padding: 0; box-sizing: border-box;
-    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-      background: linear-gradient(145deg, #0f0c29, #302b63, #24243e);
+      background: #0d0b1e;
       color: #fff;
       min-height: 100vh;
       display: flex;
@@ -22,220 +19,330 @@
       align-items: center;
     }
 
+    /* HERO */
     .hero {
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
-      padding: 72px 24px 48px;
-      max-width: 680px;
+      padding: 64px 24px 40px;
+      max-width: 700px;
       width: 100%;
     }
 
-    .app-icon {
-      width: 100px;
-      height: 100px;
-      background: linear-gradient(135deg, #6a11cb, #2575fc);
-      border-radius: 24px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 3rem;
-      margin-bottom: 24px;
-      box-shadow: 0 20px 60px rgba(106,17,203,0.5);
+    .app-icon img {
+      width: 110px;
+      height: 110px;
+      border-radius: 26px;
+      box-shadow: 0 24px 64px rgba(106,17,203,0.55);
+      margin-bottom: 28px;
     }
 
     .hero h1 {
-      font-size: clamp(2rem, 5vw, 3rem);
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
       font-weight: 800;
-      letter-spacing: -0.5px;
-      margin-bottom: 14px;
-      background: linear-gradient(90deg, #fff 60%, #a78bfa);
+      letter-spacing: -1px;
+      margin-bottom: 16px;
+      background: linear-gradient(100deg, #fff 50%, #a78bfa 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
 
     .hero .tagline {
-      font-size: clamp(1rem, 2.5vw, 1.2rem);
-      opacity: 0.8;
-      line-height: 1.6;
-      margin-bottom: 48px;
+      font-size: 1.1rem;
+      opacity: 0.75;
+      line-height: 1.7;
+      max-width: 520px;
+      margin-bottom: 20px;
     }
 
-    .download-section {
+    .lang-badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 44px;
+    }
+
+    .lang-badge {
+      background: rgba(167,139,250,0.15);
+      border: 1px solid rgba(167,139,250,0.35);
+      border-radius: 20px;
+      padding: 4px 12px;
+      font-size: 0.78rem;
+      color: #c4b5fd;
+      font-weight: 500;
+    }
+
+    /* DOWNLOAD */
+    .download-wrap {
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 12px;
       width: 100%;
       max-width: 340px;
-      margin-bottom: 64px;
+      margin-bottom: 72px;
     }
 
-    .download-section .label {
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 1.5px;
+    .dl-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 2px;
       text-transform: uppercase;
-      opacity: 0.55;
+      opacity: 0.45;
+      text-align: center;
       margin-bottom: 4px;
     }
 
     .btn {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
       text-decoration: none;
-      padding: 15px 22px;
-      border-radius: 14px;
-      font-size: 1rem;
-      font-weight: 600;
-      color: #fff;
-      transition: transform 0.22s ease, box-shadow 0.22s ease;
-      box-shadow: 0 8px 28px rgba(0,0,0,0.35);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .btn::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(255,255,255,0);
-      transition: background 0.2s;
-    }
-
-    .btn:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(0,0,0,0.4); }
-    .btn:hover::after { background: rgba(255,255,255,0.07); }
-
-    .btn-icon { font-size: 1.5rem; flex-shrink: 0; }
-
-    .btn-text { display: flex; flex-direction: column; text-align: left; }
-    .btn-text span:first-child { font-size: 0.7rem; font-weight: 400; opacity: 0.8; }
-    .btn-text span:last-child  { font-size: 1rem; font-weight: 700; }
-
-    .btn-android { background: linear-gradient(135deg, #1a8a2e, #34b233); }
-    .btn-ios     { background: linear-gradient(135deg, #1c1c1e, #3a3a3c); border: 1px solid rgba(255,255,255,0.12); }
-    .btn-mac     { background: linear-gradient(135deg, #2d2d6b, #4a4aad); border: 1px solid rgba(255,255,255,0.12); }
-
-    .features {
-      width: 100%;
-      max-width: 720px;
-      padding: 0 24px 72px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 16px;
-    }
-
-    .feature-card {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.1);
+      padding: 14px 20px;
       border-radius: 16px;
-      padding: 24px 18px;
+      color: #fff;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    }
+
+    .btn:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(0,0,0,0.5); }
+
+    .btn-android { background: linear-gradient(135deg, #0f7a1e, #2db52c); }
+    .btn-ios     { background: #1c1c1e; border: 1px solid rgba(255,255,255,0.15); }
+    .btn-mac     { background: linear-gradient(135deg, #1e1b4b, #3730a3); border: 1px solid rgba(167,139,250,0.3); }
+
+    .btn-logo {
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      line-height: 1;
+    }
+
+    .btn-text { display: flex; flex-direction: column; }
+    .btn-text .sub { font-size: 0.68rem; font-weight: 400; opacity: 0.7; }
+    .btn-text .main { font-size: 1rem; font-weight: 700; }
+
+    /* FEATURES */
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 700;
       text-align: center;
-      backdrop-filter: blur(10px);
+      margin-bottom: 28px;
+      opacity: 0.95;
+    }
+
+    .features-wrap {
+      width: 100%;
+      max-width: 760px;
+      padding: 0 24px 32px;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+    }
+
+    .feat {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 18px;
+      padding: 22px 18px;
       transition: transform 0.2s, background 0.2s;
     }
 
-    .feature-card:hover { transform: translateY(-4px); background: rgba(255,255,255,0.1); }
-    .feature-card .emoji { font-size: 2rem; margin-bottom: 10px; }
-    .feature-card h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 6px; }
-    .feature-card p  { font-size: 0.8rem; opacity: 0.65; line-height: 1.5; }
+    .feat:hover { transform: translateY(-4px); background: rgba(255,255,255,0.09); }
 
+    .feat-icon {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .feat h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .feat p {
+      font-size: 0.8rem;
+      opacity: 0.6;
+      line-height: 1.55;
+    }
+
+    /* SKILLS */
+    .skills-wrap {
+      width: 100%;
+      max-width: 760px;
+      padding: 40px 24px 72px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .skill {
+      background: linear-gradient(135deg, rgba(106,17,203,0.25), rgba(37,117,252,0.2));
+      border: 1px solid rgba(167,139,250,0.2);
+      border-radius: 14px;
+      padding: 16px 12px;
+      text-align: center;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .skill span { display: block; font-size: 1.4rem; margin-bottom: 6px; }
+
+    /* FOOTER */
     footer {
       width: 100%;
       text-align: center;
-      padding: 28px 24px;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      font-size: 0.85rem;
-      opacity: 0.6;
+      padding: 24px;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      font-size: 0.82rem;
+      opacity: 0.5;
     }
 
     footer a { color: #a78bfa; text-decoration: none; }
     footer a:hover { text-decoration: underline; }
 
-    @media (max-width: 480px) {
-      .hero { padding: 52px 20px 36px; }
-      .download-section { max-width: 100%; }
+    @media (max-width: 520px) {
+      .skills-grid { grid-template-columns: repeat(2, 1fr); }
+      .download-wrap { max-width: 100%; }
     }
   </style>
 </head>
-
 <body>
 
+  <!-- HERO -->
   <section class="hero">
-    <div class="app-icon">🎓</div>
+    <div class="app-icon">
+      <img src="icon.png" alt="Aptis Trainer icon">
+    </div>
+
     <h1>Aptis Trainer</h1>
+
     <p class="tagline">
-      The all-in-one APTIS English test prep app.<br>
-      Practice Listening, Reading, Writing &amp; Speaking — anytime, anywhere.
+      The all-in-one APTIS English test prep app for students and professionals.
+      Study in your native language — available in 9 languages.
     </p>
 
-    <div class="download-section">
-      <p class="label">Download free</p>
+    <div class="lang-badge-row">
+      <span class="lang-badge">🇻🇳 Tiếng Việt</span>
+      <span class="lang-badge">🇬🇧 English</span>
+      <span class="lang-badge">🇸🇦 Arabic</span>
+      <span class="lang-badge">🇪🇸 Spanish</span>
+      <span class="lang-badge">🇯🇵 Japanese</span>
+      <span class="lang-badge">🇹🇭 Thai</span>
+      <span class="lang-badge">🇦🇿 Azerbaijani</span>
+      <span class="lang-badge">🇺🇿 Uzbek</span>
+      <span class="lang-badge">🇦🇱 Albanian</span>
+    </div>
+
+    <!-- DOWNLOAD -->
+    <div class="download-wrap">
+      <p class="dl-label">Download free</p>
 
       <a class="btn btn-android"
          href="https://play.google.com/store/apps/details?id=com.aptis.test"
          target="_blank" rel="noopener">
-        <span class="btn-icon">📲</span>
+        <span class="btn-logo">▶</span>
         <span class="btn-text">
-          <span>Get it on</span>
-          <span>Google Play</span>
+          <span class="sub">Get it on</span>
+          <span class="main">Google Play</span>
         </span>
       </a>
 
       <a class="btn btn-ios"
          href="https://apps.apple.com/app/id6756222548"
          target="_blank" rel="noopener">
-        <span class="btn-icon">🍎</span>
+        <span class="btn-logo"></span>
         <span class="btn-text">
-          <span>Download on the</span>
-          <span>App Store</span>
+          <span class="sub">Download on the</span>
+          <span class="main">App Store</span>
         </span>
       </a>
 
       <a class="btn btn-mac"
          href="https://github.com/phuc2272000/phuc2272000.github.io/releases/download/v1.0/Aptis.Trainer.dmg"
          target="_blank" rel="noopener">
-        <span class="btn-icon">💻</span>
+        <span class="btn-logo">⌘</span>
         <span class="btn-text">
-          <span>Download for</span>
-          <span>macOS</span>
+          <span class="sub">Download for</span>
+          <span class="main">macOS</span>
         </span>
       </a>
     </div>
   </section>
 
-  <section class="features">
-    <div class="feature-card">
-      <div class="emoji">🎧</div>
-      <h3>Listening</h3>
-      <p>Real APTIS-style audio exercises with instant feedback</p>
+  <!-- 6 SKILLS -->
+  <section class="skills-wrap">
+    <p class="section-title">All 6 APTIS Skills Covered</p>
+    <div class="skills-grid">
+      <div class="skill"><span>📝</span>Grammar</div>
+      <div class="skill"><span>📚</span>Vocabulary</div>
+      <div class="skill"><span>🎧</span>Listening</div>
+      <div class="skill"><span>📖</span>Reading</div>
+      <div class="skill"><span>🗣️</span>Speaking</div>
+      <div class="skill"><span>✍️</span>Writing</div>
     </div>
-    <div class="feature-card">
-      <div class="emoji">📖</div>
-      <h3>Reading</h3>
-      <p>Timed reading tasks that mirror the actual test format</p>
-    </div>
-    <div class="feature-card">
-      <div class="emoji">✍️</div>
-      <h3>Writing</h3>
-      <p>Structured writing prompts with model answers</p>
-    </div>
-    <div class="feature-card">
-      <div class="emoji">🗣️</div>
-      <h3>Speaking</h3>
-      <p>AI-powered speaking practice with pronunciation tips</p>
-    </div>
-    <div class="feature-card">
-      <div class="emoji">📊</div>
-      <h3>Progress</h3>
-      <p>Track your improvement across all four skills</p>
-    </div>
-    <div class="feature-card">
-      <div class="emoji">📱</div>
-      <h3>All Platforms</h3>
-      <p>Android, iPhone and Mac — one account, everywhere</p>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features-wrap">
+    <p class="section-title">Key Features</p>
+    <div class="features-grid">
+      <div class="feat">
+        <span class="feat-icon">🤖</span>
+        <h3>Free AI Explanation</h3>
+        <p>Smart AI explains Reading & Listening answers — completely free.</p>
+      </div>
+      <div class="feat">
+        <span class="feat-icon">🏆</span>
+        <h3>AI Scoring</h3>
+        <p>Writing & Speaking graded by AI to British Council standards with improvement tips.</p>
+      </div>
+      <div class="feat">
+        <span class="feat-icon">⏱️</span>
+        <h3>Mock Test Mode</h3>
+        <p>Practice under real exam time pressure to get fully test-ready.</p>
+      </div>
+      <div class="feat">
+        <span class="feat-icon">📊</span>
+        <h3>Progress Tracking</h3>
+        <p>Visualize your learning journey and see exactly where you stand.</p>
+      </div>
+      <div class="feat">
+        <span class="feat-icon">🎯</span>
+        <h3>Daily Goals</h3>
+        <p>Set and hit daily targets to build a consistent study habit.</p>
+      </div>
+      <div class="feat">
+        <span class="feat-icon">🔔</span>
+        <h3>Smart Reminders</h3>
+        <p>Automatic notifications so you never miss a study session.</p>
+      </div>
+      <div class="feat">
+        <span class="feat-icon">📖</span>
+        <h3>Built-in Dictionary</h3>
+        <p>Look up words instantly without leaving the app.</p>
+      </div>
+      <div class="feat">
+        <span class="feat-icon">🔄</span>
+        <h3>Regular Updates</h3>
+        <p>New exercises added regularly, always aligned with the latest exam format.</p>
+      </div>
     </div>
   </section>
 
