@@ -1,142 +1,250 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-site-verification" content="7_au3oNJ1ibO1QipbPeVWyatZI9cPHdxj0-giHXZGo0" />
-  <title>Website chính thức - Phuc Nguyen</title>
+  <meta name="description" content="Aptis Trainer – Practice APTIS English test on Android, iPhone, and Mac. Listening, Reading, Writing, Speaking.">
+  <title>Aptis Trainer – Official App</title>
 
   <style>
-    /* Reset cơ bản */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    *, *::before, *::after {
+      margin: 0; padding: 0; box-sizing: border-box;
     }
 
     body {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: linear-gradient(145deg, #0f0c29, #302b63, #24243e);
       color: #fff;
-      text-align: center;
-      padding: 20px;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-      text-shadow: 2px 2px 6px rgba(0,0,0,0.35);
-    }
-
-    p {
-      font-size: 1.15rem;
-      margin-bottom: 35px;
-      opacity: 0.95;
-    }
-
-    .button-container {
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
-      gap: 18px;
-      width: 100%;
-      max-width: 320px;
+      align-items: center;
     }
 
-    /* Button chung */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 72px 24px 48px;
+      max-width: 680px;
+      width: 100%;
+    }
+
+    .app-icon {
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      border-radius: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      margin-bottom: 24px;
+      box-shadow: 0 20px 60px rgba(106,17,203,0.5);
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 14px;
+      background: linear-gradient(90deg, #fff 60%, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero .tagline {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      opacity: 0.8;
+      line-height: 1.6;
+      margin-bottom: 48px;
+    }
+
+    .download-section {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      width: 100%;
+      max-width: 340px;
+      margin-bottom: 64px;
+    }
+
+    .download-section .label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      opacity: 0.55;
+      margin-bottom: 4px;
+    }
+
     .btn {
-      display: block;
+      display: flex;
+      align-items: center;
+      gap: 12px;
       text-decoration: none;
-      padding: 16px 20px;
-      border-radius: 16px;
-      font-size: 1.05rem;
+      padding: 15px 22px;
+      border-radius: 14px;
+      font-size: 1rem;
       font-weight: 600;
       color: #fff;
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.35);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255,255,255,0);
+      transition: background 0.2s;
+    }
+
+    .btn:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(0,0,0,0.4); }
+    .btn:hover::after { background: rgba(255,255,255,0.07); }
+
+    .btn-icon { font-size: 1.5rem; flex-shrink: 0; }
+
+    .btn-text { display: flex; flex-direction: column; text-align: left; }
+    .btn-text span:first-child { font-size: 0.7rem; font-weight: 400; opacity: 0.8; }
+    .btn-text span:last-child  { font-size: 1rem; font-weight: 700; }
+
+    .btn-android { background: linear-gradient(135deg, #1a8a2e, #34b233); }
+    .btn-ios     { background: linear-gradient(135deg, #1c1c1e, #3a3a3c); border: 1px solid rgba(255,255,255,0.12); }
+    .btn-mac     { background: linear-gradient(135deg, #2d2d6b, #4a4aad); border: 1px solid rgba(255,255,255,0.12); }
+
+    .features {
+      width: 100%;
+      max-width: 720px;
+      padding: 0 24px 72px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 16px;
+    }
+
+    .feature-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 24px 18px;
       text-align: center;
-      transition: all 0.25s ease;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      backdrop-filter: blur(10px);
+      transition: transform 0.2s, background 0.2s;
     }
 
-    .btn:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 14px 32px rgba(0,0,0,0.35);
-    }
-
-    /* Android button */
-    .btn-android {
-      background: linear-gradient(135deg, #00c853, #64dd17);
-    }
-
-    .btn-android:hover {
-      background: linear-gradient(135deg, #00e676, #76ff03);
-    }
-
-    /* iOS button */
-    .btn-ios {
-      background: linear-gradient(135deg, #5f2c82, #49a09d);
-    }
-
-    .btn-ios:hover {
-      background: linear-gradient(135deg, #6a11cb, #2575fc);
-    }
+    .feature-card:hover { transform: translateY(-4px); background: rgba(255,255,255,0.1); }
+    .feature-card .emoji { font-size: 2rem; margin-bottom: 10px; }
+    .feature-card h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 6px; }
+    .feature-card p  { font-size: 0.8rem; opacity: 0.65; line-height: 1.5; }
 
     footer {
-      margin-top: 45px;
-      font-size: 0.9rem;
-      opacity: 0.85;
+      width: 100%;
+      text-align: center;
+      padding: 28px 24px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      font-size: 0.85rem;
+      opacity: 0.6;
     }
 
+    footer a { color: #a78bfa; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
     @media (max-width: 480px) {
-      h1 {
-        font-size: 2rem;
-      }
-
-      p {
-        font-size: 1rem;
-      }
-
-      .btn {
-        padding: 14px;
-        font-size: 1rem;
-      }
+      .hero { padding: 52px 20px 36px; }
+      .download-section { max-width: 100%; }
     }
   </style>
 </head>
 
 <body>
-  <h1>Xin chào!</h1>
-  <p>Đây là website chính thức của Phuc Nguyen.</p>
 
-  <div class="button-container">
-    <!-- Android -->
-    <a
-      class="btn btn-android"
-      href="https://play.google.com/store/apps/details?id=com.aptis.test"
-      target="_blank"
-    >
-      📲 Tải Aptis Trainer trên Android
-    </a>
+  <section class="hero">
+    <div class="app-icon">🎓</div>
+    <h1>Aptis Trainer</h1>
+    <p class="tagline">
+      The all-in-one APTIS English test prep app.<br>
+      Practice Listening, Reading, Writing &amp; Speaking — anytime, anywhere.
+    </p>
 
-    <!-- iOS -->
-    <a
-      class="btn btn-ios"
-      href="https://apps.apple.com/app/id6756222548"
-      target="_blank"
-    >
-      🍎 Tải Aptis Trainer trên iPhone
-    </a>
-  </div>
+    <div class="download-section">
+      <p class="label">Download free</p>
+
+      <a class="btn btn-android"
+         href="https://play.google.com/store/apps/details?id=com.aptis.test"
+         target="_blank" rel="noopener">
+        <span class="btn-icon">📲</span>
+        <span class="btn-text">
+          <span>Get it on</span>
+          <span>Google Play</span>
+        </span>
+      </a>
+
+      <a class="btn btn-ios"
+         href="https://apps.apple.com/app/id6756222548"
+         target="_blank" rel="noopener">
+        <span class="btn-icon">🍎</span>
+        <span class="btn-text">
+          <span>Download on the</span>
+          <span>App Store</span>
+        </span>
+      </a>
+
+      <a class="btn btn-mac"
+         href="https://github.com/phuc2272000/phuc2272000.github.io/releases/download/v1.0/Aptis.Trainer.dmg"
+         target="_blank" rel="noopener">
+        <span class="btn-icon">💻</span>
+        <span class="btn-text">
+          <span>Download for</span>
+          <span>macOS</span>
+        </span>
+      </a>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="feature-card">
+      <div class="emoji">🎧</div>
+      <h3>Listening</h3>
+      <p>Real APTIS-style audio exercises with instant feedback</p>
+    </div>
+    <div class="feature-card">
+      <div class="emoji">📖</div>
+      <h3>Reading</h3>
+      <p>Timed reading tasks that mirror the actual test format</p>
+    </div>
+    <div class="feature-card">
+      <div class="emoji">✍️</div>
+      <h3>Writing</h3>
+      <p>Structured writing prompts with model answers</p>
+    </div>
+    <div class="feature-card">
+      <div class="emoji">🗣️</div>
+      <h3>Speaking</h3>
+      <p>AI-powered speaking practice with pronunciation tips</p>
+    </div>
+    <div class="feature-card">
+      <div class="emoji">📊</div>
+      <h3>Progress</h3>
+      <p>Track your improvement across all four skills</p>
+    </div>
+    <div class="feature-card">
+      <div class="emoji">📱</div>
+      <h3>All Platforms</h3>
+      <p>Android, iPhone and Mac — one account, everywhere</p>
+    </div>
+  </section>
 
   <footer>
-      <a href="https://docs.google.com/document/d/e/2PACX-1vToB4J1d3bAYE5ZXKxhyzZKgulwsoPmIDZZw5Kh2pJMjlsyytaQnMMFbf7a-otGYRW_ic_mlMQ7YHnK/pub" target="_blank" style="color: #fff;
-  text-decoration: underline; opacity: 0.9;">Chính sách bảo
-  mật</a>
-      <br><br>
-      &copy; 2025 Phuc Nguyen. Mọi quyền được bảo lưu.
+    <a href="https://docs.google.com/document/d/e/2PACX-1vToB4J1d3bAYE5ZXKxhyzZKgulwsoPmIDZZw5Kh2pJMjlsyytaQnMMFbf7a-otGYRW_ic_mlMQ7YHnK/pub"
+       target="_blank">Privacy Policy</a>
+    &nbsp;·&nbsp;
+    &copy; 2026 Phuc Nguyen. All rights reserved.
   </footer>
+
 </body>
 </html>
